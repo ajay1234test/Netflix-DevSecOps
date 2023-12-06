@@ -14,7 +14,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     
     - name: Checkout code
@@ -42,6 +41,6 @@ jobs:
         kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
     - name: check the no
-      uses: |
+      run: |
         kubectl get nodes   
         kubectl get pods
