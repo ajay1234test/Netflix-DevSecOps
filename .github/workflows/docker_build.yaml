@@ -36,12 +36,10 @@ jobs:
     - name: Install Kubectl tool
       uses: azure/setup-kubectl@v2.0
 
-    - name: Connect Kubeadm Cluster
-      uses: Azure/k8s-set-context@v2
+    - uses: azure/k8s-set-context@v3
       with:
+        method: kubeconfig
         kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
-    - name: check the no
-      run: |
-        kubectl get nodes   
-        kubectl get pods
+    - name: check the nodes
+      run: sudo kubectl get nodes   
