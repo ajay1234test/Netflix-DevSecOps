@@ -41,4 +41,4 @@ jobs:
         kubeconfig: ${{ secrets.KUBE_CONFIG }}
 
     - name: check the no
-      run: kubectl get nodes   
+      run: sudo kubectl get nodes   
